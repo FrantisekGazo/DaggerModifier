@@ -7,16 +7,14 @@ import android.widget.TextView;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import eu.f3rog.dagger.modifier.ModifiedBy;
+import dagger.Lazy;
 import eu.f3rog.dagger.provider.R;
 import eu.f3rog.dagger.provider.di.Components;
-import eu.f3rog.dagger.provider.mvp.PresenterManger;
 
 public final class MainActivity
         extends AppCompatActivity {
 
     @Inject
-    @ModifiedBy(PresenterManger.class)
     @Named("Scoped")
     String mScopedNumber;
     @Inject

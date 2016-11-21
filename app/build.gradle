@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'dagger-modifier'
 
 buildscript {
     dependencies {
@@ -12,6 +13,7 @@ buildscript {
         }
 
         classpath 'com.android.tools.build:gradle:2.2.2'
+        classpath 'eu.f3rog.dagger.modifier:plugin:0.1.0'
     }
 }
 
@@ -38,8 +40,8 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:24.2.1'
     /* DI */
-    compile 'com.google.dagger:dagger:2.7'
-    apt 'com.google.dagger:dagger-compiler:2.7'
+    compile deps.dagger2
+    apt deps.dagger2_compiler
 
     //compile 'eu.f3rog.dagger.modifier:core:0.1.0'
     compile project(':core')

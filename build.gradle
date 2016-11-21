@@ -19,7 +19,7 @@ allprojects {
         mavenLocal()
     }
 
-    if (!['app'].contains(project.name)) {
+    if (!['DaggerModifier', 'app'].contains(project.name)) {
 
         println " --> $project.name "
 
@@ -91,14 +91,16 @@ def parseConfig(File config) {
 }
 
 ext.deps = [
-        logging          : 'org.projectlombok:lombok:1.14.2',
-        javassist        : 'org.javassist:javassist:3.20.0-GA',
+        javassist_helper : 'eu.f3rog.javassist:helper:0.1.6',
         gradle_plugin    : 'com.android.tools.build:gradle:2.2.2',
         apt_plugin       : 'com.neenbedankt.gradle.plugins:android-apt:1.8',
         // Javax Annotations (@Generated)
         javax_annotations: 'org.glassfish:javax.annotation:10.0-b28',
         // Test dependencies
         guava            : 'com.google.guava:guava:18.0',
+        dagger2          : 'com.google.dagger:dagger:2.7',
+        dagger2_compiler : 'com.google.dagger:dagger-compiler:2.7',
+
 ]
 
 task clean(type: Delete) {

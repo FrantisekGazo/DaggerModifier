@@ -7,4 +7,7 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
     compile deps.javax_annotations
+
+    compileOnly deps.dagger2
+    compileOnly deps.dagger2_compiler
 }
